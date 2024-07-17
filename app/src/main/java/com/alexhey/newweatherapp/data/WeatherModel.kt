@@ -2,6 +2,7 @@ package com.alexhey.newweatherapp.data
 
 import android.service.notification.Condition
 
+// Это должно быть на уровне domain
 data class WeatherModel(
     val city: String,
     val time: String,

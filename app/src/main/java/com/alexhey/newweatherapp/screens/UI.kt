@@ -49,7 +49,7 @@ fun MainList(list: List<WeatherModel>, currentDays: MutableState<WeatherModel>) 
     }
 }
 
-
+// Выноси в другой файлик
 @Composable
 fun ListItem(item: WeatherModel, currentDays: MutableState<WeatherModel>) {
     Card(
@@ -99,6 +99,7 @@ fun ListItem(item: WeatherModel, currentDays: MutableState<WeatherModel>) {
     }
 }
 
+// Выноси в другой файлик
 @Composable
 fun DialogSearch(dialogState: MutableState<Boolean>,onSubmit: (String)->Unit){
     val dialogText = remember {

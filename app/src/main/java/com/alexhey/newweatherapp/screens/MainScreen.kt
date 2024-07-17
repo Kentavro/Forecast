@@ -43,12 +43,14 @@ import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject
 
+// Декомпозируй!!!!!!!!!!!!!!!!!
 @Composable
 fun MainCard(currentDay: MutableState<WeatherModel>,onClickSync: () -> Unit,onClickSearch: () -> Unit) {
     Column(
         modifier = Modifier
             .padding(5.dp)
     ) {
+        // Декомпозируй!!!!!!!!!!!!!!!!!
         Card(
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier
@@ -61,6 +63,7 @@ fun MainCard(currentDay: MutableState<WeatherModel>,onClickSync: () -> Unit,onCl
                     .fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                // Декомпозируй!!!!!!!!!!!!!!!!!
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
@@ -95,6 +98,7 @@ fun MainCard(currentDay: MutableState<WeatherModel>,onClickSync: () -> Unit,onCl
                     style = TextStyle(fontSize = 16.sp),
                     color = Color.White
                 )
+                // Декомпозируй!!!!!!!!!!!!!!!!!
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
@@ -132,6 +136,8 @@ fun MainCard(currentDay: MutableState<WeatherModel>,onClickSync: () -> Unit,onCl
     }
 }
 
+/* Эту функцию нужно вынести */
+// С экспериментальными классами надо быть аккуратнее, их могут в любой момент удалить
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun TabLayout(daysList: MutableState<List<WeatherModel>>,currentDay: MutableState<WeatherModel>) {
@@ -179,6 +185,9 @@ fun TabLayout(daysList: MutableState<List<WeatherModel>>,currentDay: MutableStat
     }
 }
 
+/* Эту функцию нужно вынести
+*  И если по-умному то она должна быть в контоллере или вьюмодел,
+* но это ты осознаешь когда будешь в архитектуре шарить*/
 private fun getWeatherByHours(hours: String): List<WeatherModel> {
     if(hours.isEmpty()) return listOf()
     val hoursArray = JSONArray(hours)
